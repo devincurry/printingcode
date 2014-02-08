@@ -10,6 +10,7 @@ void setup() {
     vertex (30, 20);
     bezierVertex(width, 0, 0, 0, i, i);
     endShape();
+    //just a test
   }
 }
 
