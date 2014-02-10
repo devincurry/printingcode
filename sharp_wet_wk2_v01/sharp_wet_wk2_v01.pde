@@ -9,9 +9,9 @@ void setup() {
     for (int y = height; y >= height/8; y = y - 80) {
 
       smooth();
-      stroke(0);
+      stroke(255);
       strokeWeight(1);
-      fill(255);
+      fill(0);
       
       beginShape();
       
@@ -29,10 +29,10 @@ void setup() {
     for (int y = 50; y <= height/5; y = y + 50) {
 
       smooth();
-      stroke(255);
+      stroke(0);
       //      strokeWeight(11);
       strokeWeight(1);
-      fill(0);
+      fill(255);
       
       beginShape();
       
