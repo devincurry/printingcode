@@ -8,7 +8,26 @@ void setup() {
     for (int y = 50; y <= height/5; y = y + 50) {
 
       smooth();
-      strokeWeight(5);
+      // strokeWeight(11);
+      //strokeWeight(5);
+      fill(255);
+      beginShape();
+      vertex(0, 50);
+      bezierVertex(x, y+50, x, y, 50+x, y+50);
+      vertex(0, 0);
+      bezierVertex(0, 0, x, y, width-(width/5), height-(height/5));
+      vertex(0, 0);
+      bezierVertex(0, 0, 0, 0, 0, 0);
+
+      endShape();
+    }
+  }
+
+  for (int x = width; x >= width/2; x = x - 80) {
+    for (int y = height; y >= height/5; y = y - 50) {
+
+      smooth();
+    //  strokeWeight(5);
       fill(255);
       beginShape();
       vertex(0, 50);
@@ -22,5 +41,4 @@ void setup() {
     }
   }
 }
-
 
