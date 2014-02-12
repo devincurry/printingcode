@@ -1,6 +1,10 @@
+import processing.pdf.*;
+
 void setup() {
 
   size(500, 500);
+  
+  beginRecord(PDF, "grab.pdf"); 
   background(255);
   translate(width/10, height/10);
 
@@ -11,7 +15,7 @@ void setup() {
       smooth();
       stroke(255);
       strokeWeight(1);
-      fill(0);
+      fill(30);
       
       beginShape();
       
@@ -29,7 +33,7 @@ void setup() {
     for (int y = 50; y <= height/5; y = y + 50) {
 
       smooth();
-      stroke(0);
+      stroke(30);
       //      strokeWeight(11);
       strokeWeight(1);
       fill(255);
@@ -46,5 +50,6 @@ void setup() {
       endShape();
     }
   }
+  endRecord();
 }
 
