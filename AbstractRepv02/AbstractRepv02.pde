@@ -6,10 +6,6 @@ float randomY;
 float circleRadius;
 float circleX;
 float circleY;
-//float randomX = random(0,width);
-//float randomY = random(0,height);
-//float circleRadius = random (200, width/3);
-//float circleY = random (10, (height-height/3));
 
 void setup() {
   colorMode(HSB, 1, 1, 1);
@@ -30,33 +26,23 @@ void setup() {
   strokeWeight(10);
   stroke(bgColor.hue(), bgColor.saturation(), bgColor.brightness());
 
-  //royal blue
-  TColor firstColor = TColor.newHSV(.6, 1, .4);
-  fill(firstColor.hue(), firstColor.saturation(), firstColor.brightness());
+  TColor royalBlue = TColor.newHSV(.65, 1, .4);
+  fill(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
   ellipseMode(CENTER);
   ellipse(-50, 200, 300, 300);
-//  ellipse(circleX, circleY, circleRadius, circleRadius);
-//  ellipse(circleX, circleY, circleRadius, circleRadius);
 
+  TColor turquoise = TColor.newHSV(.55, 1, .9);
+  fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
+  ellipse(width/3, 400, 600, 600);
 
-  //  for (int a = 0; a < width; a = a + 20){
-  //    ellipseMode(CENTER);
-  //    ellipse(circleY, circleY, a, a);
-  //  }
+  TColor seaGreen = TColor.newHSV(.45, 1, 1);
+  fill(seaGreen.hue(), seaGreen.saturation(), seaGreen.brightness());
+  triangle(width/3, 650, 0, width/6, 600, height/2);
 
-  //  rect(0, 0, width/2, width/2);
-
-  //turquoise
-  TColor secondColor = TColor.newHSV(.55, 1, .9);
-  fill(secondColor.hue(), secondColor.saturation(), secondColor.brightness());
-    ellipse(width/3, 400, 600, 600);
-
-  //  rect(width/2, width/2, width/2, width/2);
-
-  //sea green
-  TColor thirdColor = TColor.newHSV(.50, 1, 1);
-  fill(thirdColor.hue(), thirdColor.saturation(), thirdColor.brightness());
-  triangle(width/3,650, 0,width/6, 600, height/2);
-  //  rect(0, width/2, width/2, width/2);
+  fill(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
+  quad(300, 200, 450, 50, 800,800, 600,700);
+  
+    fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
+  ellipse(width/3, 400, 600, 600);
 }
 
