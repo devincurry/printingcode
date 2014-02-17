@@ -25,10 +25,10 @@ void setup() {
 
   //color palette
   TColor printBlack = TColor.newHSV(.65, 1, .1, 1);
-  TColor royalBlue = TColor.newHSV(.65, 1, .4, .8);
-  TColor turquoise = TColor.newHSV(.55, 1, .9);
-  TColor seaGreen = TColor.newHSV(.45, 1, 1);
-  TColor brightGreen = TColor.newHSV(.7, 1, 1);
+  TColor royalBlue = TColor.newHSV(.65, 1, .4, .5);
+  TColor turquoise = TColor.newHSV(.55, 1, .9, .5);
+  TColor seaGreen = TColor.newHSV(.45, 1, 1, .5);
+  TColor brightGreen = TColor.newHSV(.7, 1, 1, 1);
 
   background(printBlack.hue(), printBlack.saturation(), printBlack.brightness(), printBlack.alpha());
   // background(seaGreen.hue(), seaGreen.saturation(), seaGreen.brightness());
