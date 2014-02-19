@@ -10,10 +10,10 @@ float lineColor;
 
 void setup() {
 
-  colorMode(HSB, 1, 1, 1);
   size (1000, 1000);
 
   beginRecord(PDF, "grab.pdf"); 
+  colorMode(HSB, 1, 1, 1);
 
   translate(15, 0);
 
