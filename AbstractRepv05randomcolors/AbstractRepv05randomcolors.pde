@@ -18,11 +18,6 @@ void setup() {
   
   translate(15,0);
 
-  circleX = random(0, width);
-  randomY = random(150, 450);
-  circleRadius = random (50, width);
-  circleY = random (10, (height-height/3));
-
   //color randomizers
   brightColor = random(0, 1);
   midColor = brightColor+0.1;
@@ -52,7 +47,8 @@ void setup() {
       stroke(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
       strokeWeight(2);
       beginShape();
-      vertex(150, 850);
+//      vertex(150, 850);
+      vertex(180, 900);
       vertex (i, 0);
       endShape();
     }
@@ -69,7 +65,9 @@ void setup() {
 
   fill(seaGreen.hue(), seaGreen.saturation(), seaGreen.brightness());
 //  triangle(600, 100, 800, 150, 450, 950);
-  quad(600, 100, 800, 200, 500, 800, 400,750);
+//  quad(600, 90, 790, 200, 500, 800, 400, 750);
+  quad(600, 90, 790, 200, 500, 780, 400, 740);
+
 
 
   fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
