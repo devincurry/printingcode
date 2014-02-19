@@ -15,6 +15,8 @@ float lineColor;
 void setup() {
   colorMode(HSB, 1, 1, 1);
   size (1000, 1000);
+  
+  translate(15,0);
 
   circleX = random(0, width);
   randomY = random(150, 450);
@@ -60,50 +62,36 @@ void setup() {
   strokeWeight(5);
   stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
 
-  //  alpha(HSB);
-
-  fill(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
   ellipseMode(CENTER);
-  //  ellipse(-50, 200, 300, 300);
 
   fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
   quad(500, 600, 800, 320, 880, 700, 500, 520);
 
   fill(seaGreen.hue(), seaGreen.saturation(), seaGreen.brightness());
-  triangle(600, 100, 800, 150, 450, 950);
+//  triangle(600, 100, 800, 150, 450, 950);
+  quad(600, 100, 800, 200, 500, 800, 400,750);
+
 
   fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
   ellipse(width/3, 400, 600, 600);
 
-  fill(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
-  //  quad(400, width/2, 500, width/2, -150, 750, -50, 850);
-
   fill(seaGreen.hue(), seaGreen.saturation(), seaGreen.brightness());
   triangle(width/3, 650, 0, width/6, 600, height/2);
 
-  fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
-  //  quad(650, 850, 800, 850, 950, 0, 850, 0);
-
   fill(seaGreen.hue(), seaGreen.saturation(), seaGreen.brightness());
   ellipse(780, 750, 140, 140);
-  ellipse(680, 600, 100, 100);
+//  ellipse(680, 600, 100, 100);
 
 
   fill(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
-  //  quad(300, 200, 450, 50, 800, 800, 600, 700);
   quad(580, 300, 850, 400, 900, 200, 750, 50);
   ellipse(300, 350, 250, 250);
+    ellipse(680, 600, 100, 100);
+
 
 
   fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
   quad(320, 250, 420, 450, 380, 500, 280, 450);
-
-
-  //  fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
-  //  ellipse(width/3, 400, 600, 600);
-
-  //  stroke(brightGreen.hue(), brightGreen.saturation(), brightGreen.brightness());
-  stroke(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
 
 //  strokeWeight(2);
 //  for (int i = 600; i < width; i = i+25) {
