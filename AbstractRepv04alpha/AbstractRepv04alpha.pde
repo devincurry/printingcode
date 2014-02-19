@@ -8,8 +8,8 @@ float circleX;
 float circleY;
 
 void setup() {
-  colorMode(HSB, 1, 1, 1, 1);
-  
+colorMode(HSB, 1.0, 1.0, 1.0, 1.0);
+
 //  alpha(HSB);
 
   size (1000, 1000);
@@ -24,11 +24,11 @@ void setup() {
   //i.e. myColor.desaturate(0.3); or myColor.darken(0.5);
 
   //color palette
-  TColor printBlack = TColor.newHSV(.65, 1, .1, 1);
-  TColor royalBlue = TColor.newHSV(.65, 1, .4, .5);
-  TColor turquoise = TColor.newHSV(.55, 1, .9, .5);
-  TColor seaGreen = TColor.newHSV(.45, 1, 1, .5);
-  TColor brightGreen = TColor.newHSV(.7, 1, 1, 1);
+  TColor printBlack = TColor.newHSV(0.65, 1.0, 0.1, 1.0);
+  TColor royalBlue = TColor.newHSV(0.65, 1.0, 0.4, 0.5);
+  TColor turquoise = TColor.newHSV(0.55, 1.0, 0.9, 0.5);
+  TColor seaGreen = TColor.newHSV(0.45, 1.0, 1.0, 0.5);
+  TColor brightGreen = TColor.newHSV(0.7, 1.0, 1.0, 1.0);
 
   background(printBlack.hue(), printBlack.saturation(), printBlack.brightness(), printBlack.alpha());
   // background(seaGreen.hue(), seaGreen.saturation(), seaGreen.brightness());
