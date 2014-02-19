@@ -1,5 +1,7 @@
 import toxi.color.*;
 import toxi.util.datatypes.*;
+import processing.pdf.*;
+
 
 float randomX;
 float randomY;
@@ -15,6 +17,8 @@ float lineColor;
 void setup() {
   colorMode(HSB, 1, 1, 1);
   size (1000, 1000);
+
+  beginRecord(PDF, "grab.pdf"); 
 
   translate(15, 0);
 
@@ -81,8 +85,10 @@ void setup() {
   quad(580, 300, 850, 400, 900, 200, 750, 50);
   ellipse(300, 350, 250, 250);
   ellipse(680, 600, 100, 100);
-  
+
   fill(turquoise.hue(), turquoise.saturation(), turquoise.brightness());
   quad(320, 250, 420, 450, 380, 500, 280, 450);
+
+  endRecord();
 }
 
