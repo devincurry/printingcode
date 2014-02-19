@@ -1,6 +1,7 @@
+import processing.pdf.*;
+
 import toxi.color.*;
 import toxi.util.datatypes.*;
-import processing.pdf.*;
 
 float brightColor;
 float midColor;
@@ -8,6 +9,7 @@ float darkColor;
 float lineColor;
 
 void setup() {
+
   colorMode(HSB, 1, 1, 1);
   size (1000, 1000);
 
@@ -28,10 +30,10 @@ void setup() {
   TColor turquoise = TColor.newHSV(midColor, .5, .9);
   TColor royalBlue = TColor.newHSV(darkColor, .5, .9);
 
-
   background(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
 
   strokeWeight(2);
+
   for (int i = 600; i < width; i = i+25) {
 
     stroke(royalBlue.hue(), royalBlue.saturation(), royalBlue.brightness());
