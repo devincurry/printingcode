@@ -27,11 +27,11 @@ void setup() {
   background(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
   noStroke();
 
-  //each letter is carved from a white block
+  //each letter is "carved" from this white block
   fill(white.hue(), white.saturation(), white.brightness());
   rect(0, 0, textW, textH);
 
-  //add one black square and one triangle, respectively, to create the letter
+  //these functions add one black square and one triangle, respectively, to create the letter
   fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
 
   //  letterQ();
@@ -40,13 +40,9 @@ void setup() {
   //  letterS();
   letterT();
 
-
-  //  rect(textW/4, 0, textW/2, textW/2);
-  //  triangle(textW/4, textW/2, textW/4, textH-(textW/4), (textW-textW/4), textW/2);
-
-
   //  endRecord();
 }
+
 
 void letterQ() {
   rect(textW/4, textW/4, textW/2, textH/2);
@@ -70,7 +66,7 @@ void letterS() {
 }
 
 void letterT() {
-//  rect((textW-textW/2), textW/2, (textW-textW/4), (textW-textW/4));
+  //  rect((textW-textW/2), textW/2, (textW-textW/4), (textW-textW/4));
   rect((textW-textW/2), textW/4, (textW-textW/4), (textW-textW/4));
   triangle(0, textW/4, 0, textH, textW/4, textW/4);
 }
