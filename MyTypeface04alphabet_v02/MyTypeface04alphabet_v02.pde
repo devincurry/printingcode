@@ -30,7 +30,7 @@ void setup() {
 
       // (textW-textW/3), textH/4, textW/3, textH/3, (textW-textW/3), (textH-textH/4), (textW-textW/3), textH/2, textW, (textH-textW/4)  // G
 
-      // textW/4, 0, textW/2, textW/2, textW/2, (textH-textH/4), textW/4, textH, (textW-textW/4), textH   // H
+      // textW/4, textH*2/3, textW/2, textW/2, textW/4, textH/3, textW/4, 0, textW*3/4, 0   // H
 
       // (textW-textW/2), 0, textW, textH, 0, 0, textW/4, 0, 0, textH  // I
 
@@ -72,7 +72,7 @@ void setup() {
     }
   };
 
-  beginRecord(PDF, "letterZ.pdf"); 
+  beginRecord(PDF, "letter.pdf"); 
 
   colorMode(HSB, 1, 1, 1);
 
