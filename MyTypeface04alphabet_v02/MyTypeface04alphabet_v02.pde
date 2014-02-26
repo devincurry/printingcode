@@ -46,7 +46,9 @@ void setup() {
 
       //  textW/4, textW/4, textW/2, textH/2, 0, 0, 0, textH/4, textW/4, 0  // O
 
-      //  textW/4, textW/4, textW/2, textH/2, textW/2, textH, textW, textH, (textW-textW/4), (textH-textW/4)}  // Q
+      // textW/2, textH*3/4, textW/2, textH/2, textW/2, textH/4, textW*3/4, textH*3/8, textW/2, textH/2  //P
+
+      //  textW/4, textW/4, textW/2, textH/2, textW/2, textH, textW, textH, (textW-textW/4), (textH-textW/4)  // Q
 
       //  textW/2, textH/4, textW/4, textH/4, textW/4, textH/2, textW/4, textH, textW, textH  // R
 
@@ -56,22 +58,21 @@ void setup() {
 
       //  textW/4, 0, textW/2, textW/2, textW/4, textW/2, textW/4, textH-(textW/4), (textW-textW/4), textW/2   // U
 
-      //        textW/4, 0, textW/4, textW/4, textW, textH, textW, 0, 0, textH   // V
+      //  textW/4, 0, textW/4, textW/4, textW, textH, textW, 0, 0, textH   // V
 
-      //  textW/4, 0, textW/4, textH/4, textW/2, 0, textW*3/4, textH/4, textW*3/4, 0  // W
       // textW/2, 0, textW/4, textH/4, textW/2, 0, textW/4, textH/4, textW/4, 0  // W
 
-      //      0, 0, textW/2, textW/2, textW, textH, textW, 0, textW/2, textH   // X
-      textW/2, 0, textW/2, textW/2, 0, textH, 0, 0, textW/2, textH/2   // X
+      // textW/2, 0, textW/2, textW/2, 0, textH, 0, 0, textW/2, textH/2   // X
 
+      // textW/2, 0, textW/4, textW/4, textW*3/4, textH, 0, textH, 0, textH/4  // Y
 
-      //  textW/2, 0, textW/4, textW/4, textW*3/4, textH, 0, textH, 0, textH/4  // Y
+      // 0, textH/2, textW/2, textH/2, 0, 0, textW, 0, textW/2, textH/3  // Y
 
       // textW*3/4, textW/2, textW/4, textH/4, 0, textH, 0, textH/4, textW*3/4, textH/4  // Z
     }
   };
 
-  //  beginRecord(PDF, "grab.pdf"); 
+  beginRecord(PDF, "letterZ.pdf"); 
 
   colorMode(HSB, 1, 1, 1);
 
@@ -85,7 +86,6 @@ void setup() {
   background(white.hue(), white.saturation(), white.brightness());
 
   stroke(white.hue(), white.saturation(), white.brightness());
-
 
 
   for (int i = 0; i < letters.length; i++)
@@ -106,51 +106,6 @@ void setup() {
     translate(textW * 1.2, 0);
   } 
 
-
-
-  //  endRecord();
+  endRecord();
 }
 
-
-
-/*
-void letterU() {
- rect(textW/4, 0, textW/2, textW/2);
- triangle(textW/4, textW/2, textW/4, textH-(textW/4), (textW-textW/4), textW/2);
- }
- 
- 
- void letterE() {
- rect((textW-textW/4), textW/4, textW/4, textH/4);
- triangle(textW, textH, textW, (textH-textW/4), (textW-textW/4), (textH-textW/4));
- }
- 
- void letterS() {
- rect((textW-textW/4), textW/4, textW/4, textH/4);
- triangle(0, 0, 0, (textH-textW/4), (textW-textW/4), (textH-textW/4));
- }
- 
- void letterT() {
- //  rect((textW-textW/2), textW/2, (textW-textW/4), (textW-textW/4));
- rect((textW-textW/2), textW/4, (textW-textW/4), (textW-textW/4));
- triangle(0, textW/4, 0, textH, textW/4, textW/4);
- }
- 
- void letterA() {
- //  rect(textW/2, textW/4, textW/4, textW/4);
- rect(textW/4, (textW-textW/4), textW/2, textW/4);
- triangle(textW/4, textW/2, (textW-textW/4), textH/2, (textW-textW/4), textW/4);
- }
- 
- void letterB() {
- rect(textW/3, textH/2, textW/3, textH/3);
- triangle(textW/3, textW/3, textW/3, textW/6, (textW-textW/3), textW/3);
- // triangle(textW/4, textW/2, (textW-textW/4), textH/2, (textW-textW/4), textW/4);
- }
- 
- void letterC() {
- rect(textW/2, textW/4, textW/2, textH/2);
- triangle(0, 0, textW/2, 0, 0, textW/2);
- }
- 
- */
