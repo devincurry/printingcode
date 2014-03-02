@@ -27,11 +27,13 @@ void setup()
 
   // start hair hill curve
 
-//  strokeWeight(2);
+  //  strokeWeight(2);
 
   float hairs[][] = {
     {
-      width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height
+      width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height,  //[0-7]
+      width-10, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), -10, height, //[8-15]
+      width-20, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), -20, height, //[16-23]
     }
   };
 
@@ -42,6 +44,10 @@ void setup()
     strokeWeight(1);
 
     bezier(hairs[i][0], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][6], hairs[i][7]);
+    bezier(hairs[i][8], hairs[i][9], hairs[i][10], hairs[i][11], hairs[i][12], hairs[i][13], hairs[i][14], hairs[i][15]);
+    bezier(hairs[i][16], hairs[i][17], hairs[i][18], hairs[i][19], hairs[i][20], hairs[i][21], hairs[i][22], hairs[i][23]);
+
+
 
     /*
   for (int i = 0; i <= 20; i++) {
@@ -60,6 +66,7 @@ void setup()
      */
   }
   // create a grid object as a container for our grid variables (columns, rows, gutter size, margin size)
+
   ModularGrid grid = new ModularGrid(8, 8, 0, 0);
 
   // we can even implement a function that draws the grid for us
