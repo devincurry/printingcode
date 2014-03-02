@@ -26,7 +26,7 @@ void setup() {
 
       // (textW-textW/4), textW/4, textW/4, textH/4, textW, textH, textW, (textH-textW/4), (textW-textW/4), (textH-textW/4)  // E
 
-      // (textW-textW/4), (textH-textW/4), textW/4, textH/4, textW, textH/4, textW, textH/2, (textW-textW/4), textH/2  // F
+      // textW/2, (textH-textW/4), textW/2, textH/4,       textW, textH/4, textW, textH/2, textW/2, textH/2  // F
 
       // (textW-textW/3), textH/4, textW/3, textH/3, (textW-textW/3), (textH-textH/4), (textW-textW/3), textH/2, textW, (textH-textW/4)  // G
 
@@ -36,7 +36,16 @@ void setup() {
 
       //  0, 0, textW/2, textH/2, 0, textH/2, textW/4, (textH-textH/4), textW/2, textH/2  // J
 
-      //  textW/4, (textH-textW/3), textW/3, textH/3, textW, 0, textW, (textH-textH/4), textW/3, textH/3 // K
+      //        textW/4, (textH-textW/3), textW/3, textH/3, textW, 0, textW, (textH-textH/4), textW/3, textH/3 // K
+
+      //      textW/4, (textH-textW/4), textW/4, textH/4, textW, 0, textW, textH, textW/4, textH/2 // K2
+
+      //            textW/4, 0, textW/4, textW/8,        textW, 0, textW, textH, textW/3, textH/2 // K3
+
+     // textW*3/4, textW/4, textW/4, textW/2,       textW/4, 0, textW*3/4, 0, textW/4, textH/2 // K4
+
+
+
 
       //  textW/2, 0, textW/2, textH/2, textW/2, textH/2, textW*3/4, (textH-textH/4), textW, textH/2  // L
 
@@ -72,7 +81,7 @@ void setup() {
     }
   };
 
-  beginRecord(PDF, "letter.pdf"); 
+  beginRecord(PDF, "letterK4.pdf"); 
 
   colorMode(HSB, 1, 1, 1);
 
