@@ -21,41 +21,44 @@ void setup()
 
   size(600, 900);
   background(white.hue(), white.saturation(), white.brightness());
-//    background(skyBlue.hue(), skyBlue.saturation(), skyBlue.brightness());
+  //    background(skyBlue.hue(), skyBlue.saturation(), skyBlue.brightness());
 
   smooth();
 
   // start hair hill curve
 
-  strokeWeight(2);
-  vert1X = width;
-  vert1Y = height*3/8;
-  bezVert1X = width/4;
-  bezVert1Y = height*3/8;
-  bezVert2X = width*3/4;
-  bezVert2Y = height*6/8;
-  vert2X = 0;
-  vert2Y = height;
+//  strokeWeight(2);
 
-  bezier(vert1X, vert1Y, bezVert1X, bezVert1Y, bezVert2X, bezVert2Y, vert2X, vert2Y);
+  float hairs[][] = {
+    {
+      width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height
+    }
+  };
 
-  strokeWeight(1);
-  /*
-  for (int i = 0; i <= 20; i++) {
+  for (int i = 0; i < hairs.length; i++)
+  {
+    noFill();
+    stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
     strokeWeight(1);
-    //translate(i, 0);
-    vert1X = width;
-    vert1Y = height*3/7;
-    bezVert1X = width/4;
-    bezVert1Y = height*3/7;
-    bezVert2X = width*3/4;
-    bezVert2Y = height*6/7;
-    vert2X = 0;
-    vert2Y = height;
-    bezier(vert1X, vert1Y, bezVert1X, bezVert1Y, bezVert2X, bezVert2Y, vert2X, vert2Y);
-  }
-  */
 
+    bezier(hairs[i][0], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][6], hairs[i][7]);
+
+    /*
+  for (int i = 0; i <= 20; i++) {
+     strokeWeight(1);
+     //translate(i, 0);
+     vert1X = width;
+     vert1Y = height*3/7;
+     bezVert1X = width/4;
+     bezVert1Y = height*3/7;
+     bezVert2X = width*3/4;
+     bezVert2Y = height*6/7;
+     vert2X = 0;
+     vert2Y = height;
+     bezier(vert1X, vert1Y, bezVert1X, bezVert1Y, bezVert2X, bezVert2Y, vert2X, vert2Y);
+     }
+     */
+  }
   // create a grid object as a container for our grid variables (columns, rows, gutter size, margin size)
   ModularGrid grid = new ModularGrid(8, 8, 0, 0);
 
