@@ -19,10 +19,12 @@ float eyeY3;
 float eyeX4;
 float eyeY4;
 
-Tree[] trees = new Tree[20]; // create array of trees
+Tree[] trees = new Tree[30]; // create array of trees
+int numTrees = 30;
 
 float treeRangeX;
 float treeRangeY;
+
 
 void setup()
 {
@@ -164,7 +166,7 @@ void setup()
 
   //generate trees
   strokeWeight(1);
-  for (int t = 0; t < 20; t++) {
+  for (int t = 0; t < numTrees; t++) {
     treeRangeX = random((width/16)*-1, width*11/16);
     treeRangeY = random(height*5/8, height*15/16);
     trees[t] = new Tree(treeRangeX, treeRangeY);
