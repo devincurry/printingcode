@@ -10,7 +10,16 @@ float norTextY; // "Norwegian Wood"
 float authTextX; // "Haruki Murakami"
 float authTextY; // "Haruki Murakami"
 
-Tree[] trees = new Tree[20]; // array of trees
+float eyeX1;
+float eyeY1;
+float eyeX2;
+float eyeY2;
+float eyeX3;
+float eyeY3; 
+float eyeX4;
+float eyeY4;
+
+Tree[] trees = new Tree[20]; // create array of trees
 
 float treeRangeX;
 float treeRangeY;
@@ -28,15 +37,15 @@ void setup()
 
   smooth();
 
-  //book title and author text
-  f = createFont("GeosansLight", 72);
-
-  fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
-
+  //draw book title and author text
   norTextX = width/16;
   norTextY = height*3/16;
   authTextX = width/16;
   authTextY = height*4/16;
+
+  fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+
+  f = createFont("GeosansLight", 72);
 
   textFont(f, 36);
   text("NORWEGIAN WOOD", norTextX, norTextY);
@@ -51,7 +60,7 @@ void setup()
   float hairs[][] = {
     {
       width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height, // 0-7
-      width-10, -10, // 8, 9
+      width-10, -10, // array numbers 8, 9
       width-20, -20, // 10, 11
       width-30, -30, // 12, 13
       width-40, -40, // 14, 15
@@ -118,7 +127,43 @@ void setup()
     }
   }
 
+  //eyes
+  //  noFill();
+  //  stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+  //  strokeWeight(2);
+
+
+  eyeX1 = width*10/16;
+  eyeY1 = height*9/16;
+  eyeX2 = width*10/16;
+  eyeY2 = height*9.5/16;
+  eyeX3 = width*11/16;
+  eyeY3 = height*9.5/16; 
+  eyeX4 = width*12/16;
+  eyeY4 = height*9/16;
+
+  // curve(eyeX1, eyeY1, eyeX2, eyeY2, eyeX3, eyeY3, eyeX4, eyeY4);
+  //beginShape();
+  noFill();
+  stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+  strokeWeight(1);
+
+  //line(eyeX1, eyeY1, eyeX4, eyeY4);
+  bezier(eyeX1, eyeY1, eyeX2, eyeY2, eyeX3, eyeY3, eyeX4, eyeY4);
+  bezier(eyeX1+width*3/16, eyeY1, eyeX2+width*3/16, eyeY2, eyeX3+width*3/16, eyeY3, eyeX4+width*3/16, eyeY4);
+  
+  //mouth
+  line(eyeX1+width*2/24, eyeY1+height*3/16, eyeX1+width*5/24, eyeY4+height*3/16);
+
+
+  //  curveVertex(eyeX1, eyeY1);
+  //  curveVertex(eyeX2, eyeY2);
+  //  curveVertex(eyeX4, eyeY4);
+  //  endShape();
+
+
   //generate trees
+  strokeWeight(1);
   for (int t = 0; t < 20; t++) {
     treeRangeX = random((width/16)*-1, width*11/16);
     treeRangeY = random(height*5/8, height*15/16);
@@ -130,7 +175,7 @@ void setup()
   ModularGrid grid = new ModularGrid(16, 16, 0, 0);
 
   // toggle this function to show/hide grid
-  grid.display();
+  //grid.display();
 
   //    endRecord();
 }
