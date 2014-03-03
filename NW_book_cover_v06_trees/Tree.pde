@@ -24,24 +24,27 @@ class Tree {
     //    treeX3 = _treeX3;
     //    treeY3 = _treeY3;
     treeW = random(width/16, width/8);
-    treeH = random(height/6, height/8);
-    b = random(.1, .7);
+    treeH = random(height/8, height/6);
+//    b = random(.1, .7);
   }
 
   void displayTree() {
-    h = 1;
-    s = 0;
-    a = 0.5;
-    b = random(.1, .7);
+//    h = 1;
+//    s = 0;
+//    a = 0.5;
+//    b = random(.1, .7);
+
+    float randomBright = random(.1, .7);
+    TColor randomGray = TColor.newHSV(.65, .1, randomBright);
+    fill(randomGray.hue(), randomGray.saturation(), randomGray.brightness());
 
     treeX2 = treeX1 - treeW/2;
     treeX3 = treeX1 + treeW/2;
     treeY2 = treeY1 + treeH;
     treeY3 = treeY2;
-    fill(h, s, b, a);
+//    fill(h, s, b, a);
 
     triangle (treeX1, treeY1, treeX2, treeY2, treeX3, treeY3);
   }
 }
-
 

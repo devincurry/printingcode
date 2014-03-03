@@ -26,14 +26,18 @@ Tree[] trees = new Tree[20];
 float treeRangeX;
 float treeRangeY;
 
+float randomBright;
+
+
 
 void setup()
 {
   //    beginRecord(PDF, "letterK4.pdf"); 
+
+
   colorMode(HSB, 1, 1, 1);
   TColor printBlack = TColor.newHSV(.65, 1, .1);
   TColor white = TColor.newHSV(1, 0, 1);
-  TColor skyBlue = TColor.newHSV(.6, .7, 1);
 
   f = createFont("Neou-Thin", 48);
 
@@ -101,6 +105,7 @@ void setup()
       stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
       strokeWeight(1);
 
+      beginShape();
       //draw curves
       bezier(hairs[i][0], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][6], hairs[i][7]);         // row 0
       bezier(hairs[i][8], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][9], hairs[i][7]);   // row 1
@@ -128,14 +133,17 @@ void setup()
       bezier(hairs[i][52], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][53], hairs[i][7]); // row 23
       bezier(hairs[i][54], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][55], hairs[i][7]); // row 24
       bezier(hairs[i][56], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][57], hairs[i][7]); // row 26
+      endShape();
     }
   }
 
 
   for (int t = 0; t < 20; t++) {
-    float randomBright = random(.1, .7);
-    fill(1, 0, randomBright);
-
+/*
+    randomBright = random(.1, .7);
+    TColor randomGray = TColor.newHSV(0, randomBright, 1);
+    fill(randomGray.hue(), randomGray.saturation(), randomGray.brightness());
+*/
     treeRangeX = random((width/16)*-1, width*11/16);
     treeRangeY = random(height*5/8, height*15/16);
     trees[t] = new Tree(treeRangeX, treeRangeY);
