@@ -2,55 +2,35 @@ import processing.pdf.*;
 import toxi.color.*;
 import toxi.util.datatypes.*;
 
-//float vert1X;
-//float vert1Y;
-//float vert2X;
-//float vert2Y;
-//float bezVert1X;
-//float bezVert1Y;
-//float bezVert2X;
-//float bezVert2Y;
-
 PFont f; // Global font variable
 float fontSize;
 
-float norTextX; // "Norwegian"
-float norTextY; // "Norwegian"
-float woodTextX; // "Wood"
-float woodTextY; // "Wood"
+float norTextX; // "Norwegian Wood"
+float norTextY; // "Norwegian Wood"
 float authTextX; // "Haruki Murakami"
 float authTextY; // "Haruki Murakami"
 
-Tree[] trees = new Tree[20];
+Tree[] trees = new Tree[20]; // array of trees
 
 float treeRangeX;
 float treeRangeY;
 
-float randomBright;
-
-
-
 void setup()
 {
-  //    beginRecord(PDF, "letterK4.pdf"); 
-
+  //    beginRecord(PDF, "norwegianwood001.pdf"); 
 
   colorMode(HSB, 1, 1, 1);
   TColor printBlack = TColor.newHSV(.65, 1, .1);
   TColor white = TColor.newHSV(1, 0, 1);
 
-  f = createFont("Neou-Thin", 48);
-
-
   size(600, 900);
   background(white.hue(), white.saturation(), white.brightness());
-  //    background(skyBlue.hue(), skyBlue.saturation(), skyBlue.brightness());
 
   smooth();
+
+  //book title and author text
   f = createFont("GeosansLight", 72);
 
-  //text
-  textFont(f, 36);
   fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
 
   norTextX = width/16;
@@ -58,15 +38,16 @@ void setup()
   authTextX = width/16;
   authTextY = height*4/16;
 
+  textFont(f, 36);
   text("NORWEGIAN WOOD", norTextX, norTextY);
 
   textFont(f, 24);
   text("Haruki Murakami", authTextX, authTextY);
 
-  // start hair hill curve
 
+  // "hair hill" curve
 
-  //  vert1Y = (height*3/8);
+  //array of arrays to plug coordinates into bezier vertex functions
   float hairs[][] = {
     {
       width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height, // 0-7
@@ -98,7 +79,6 @@ void setup()
     }
   };
 
-
   for (int i = 0; i < hairs.length; i++) {
     {
       noFill();
@@ -106,7 +86,8 @@ void setup()
       strokeWeight(1);
 
       beginShape();
-      //draw curves
+
+      //draw hair
       bezier(hairs[i][0], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][6], hairs[i][7]);         // row 0
       bezier(hairs[i][8], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][9], hairs[i][7]);   // row 1
       bezier(hairs[i][10], hairs[i][1], hairs[i][2], hairs[i][3], hairs[i][4], hairs[i][5], hairs[i][11], hairs[i][7]);   // row 1
@@ -137,27 +118,19 @@ void setup()
     }
   }
 
-
+  //generate trees
   for (int t = 0; t < 20; t++) {
-/*
-    randomBright = random(.1, .7);
-    TColor randomGray = TColor.newHSV(0, randomBright, 1);
-    fill(randomGray.hue(), randomGray.saturation(), randomGray.brightness());
-*/
     treeRangeX = random((width/16)*-1, width*11/16);
     treeRangeY = random(height*5/8, height*15/16);
     trees[t] = new Tree(treeRangeX, treeRangeY);
     trees[t].displayTree();
   }
 
-
-
-  // create a grid object as a container for our grid variables (columns, rows, gutter size, margin size)
-
+  // create grid object (columns, rows, gutter size, margin size)
   ModularGrid grid = new ModularGrid(16, 16, 0, 0);
 
-  // we can even implement a function that draws the grid for us
-  //grid.display();
+  // toggle this function to show/hide grid
+  grid.display();
 
   //    endRecord();
 }

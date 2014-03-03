@@ -1,49 +1,37 @@
 class Tree {
 
   float treeX1;
-  float treeY1;
+  float treeY1; //X1 and Y1 are the top point of the tree
   float treeX2;
-  float treeY2;
+  float treeY2; //X2 and Y2 are the bottom-left corner
   float treeX3;
-  float treeY3;
-  float treeW;
-  float treeH;
+  float treeY3; //X3 and Y3 are the bottom-right corner
+  float treeW; //for generating random width
+  float treeH; //for generating random height
 
-  float h = 1; //hue
-  float s = 0; //saturation
-  float b; //brightness
-  float a = 0.5; //alpha
-
+//pass treetop coordinates
   Tree (float _treeX1, float _treeY1) {
-
-    //  Tree (float _treeX1, float _treeY1, float _treeX2, float _treeY2, float _treeX3, float _treeY3) {
     treeX1 = _treeX1;
     treeY1 = _treeY1;
-    //    treeX2 = _treeX2;
-    //    treeY2 = _treeY2;
-    //    treeX3 = _treeX3;
-    //    treeY3 = _treeY3;
     treeW = random(width/16, width/8);
     treeH = random(height/8, height/6);
-//    b = random(.1, .7);
   }
 
   void displayTree() {
-//    h = 1;
-//    s = 0;
-//    a = 0.5;
-//    b = random(.1, .7);
+// noStroke();
 
+//fill trees with random gray tone
     float randomBright = random(.1, .7);
     TColor randomGray = TColor.newHSV(.65, .1, randomBright);
     fill(randomGray.hue(), randomGray.saturation(), randomGray.brightness());
 
+//generate random tree dimensions
     treeX2 = treeX1 - treeW/2;
     treeX3 = treeX1 + treeW/2;
     treeY2 = treeY1 + treeH;
     treeY3 = treeY2;
-//    fill(h, s, b, a);
 
+//draw a tree
     triangle (treeX1, treeY1, treeX2, treeY2, treeX3, treeY3);
   }
 }
