@@ -6,7 +6,6 @@ import toxi.util.datatypes.*;
 PFont f; // Global font variable
 int fontSize;
 
-
 float eyeX1;
 float eyeY1;
 float eyeX2;
@@ -16,8 +15,8 @@ float eyeY3;
 float eyeX4;
 float eyeY4;
 
-Tree[] trees = new Tree[30]; // create array of trees
-int numTrees = 30;
+Tree[] trees = new Tree[40]; // create array of trees
+int numTrees = 40;
 
 float treeRangeX;
 float treeRangeY;
@@ -25,7 +24,7 @@ float treeRangeY;
 
 void setup()
 {
-  //    beginRecord(PDF, "norwegianwood001.pdf"); 
+  beginRecord(PDF, "norwegianwood005.pdf"); 
 
   colorMode(HSB, 1, 1, 1);
   TColor printBlack = TColor.newHSV(.65, 1, .1);
@@ -37,17 +36,19 @@ void setup()
 
   smooth();
 
+  // create grid object (columns, rows, gutter size, margin size)
   ModularGrid grid = new ModularGrid(16, 16, 0, 0);
 
   //generate trees
-  strokeWeight(1);
+  noStroke();
   for (int t = 0; t < numTrees; t++) {
-    treeRangeX = random((width/16)*-1, width*11/16);
-    treeRangeY = random(height*5/8, height*15/16);
+    treeRangeX = random((width/16)*-1, width*6/16);
+    treeRangeY = random(height*6/8, height*15/16);
     trees[t] = new Tree(treeRangeX, treeRangeY);
     trees[t].displayTree();
   }
 
+  strokeWeight(2);
   fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
   fontSize = 60; //72
   RG.init(this);
@@ -80,17 +81,6 @@ void setup()
   translate(grid.modules[1][2].x, grid.modules[1][8].y);
   authorFont.draw("Murakami");
   popMatrix();
-  //font.draw("Haruki Murakami");
-  /*
-  pushMatrix();
-   translate(grid.modules[1][2].x, grid.modules[1][8].y - height/60);
-   authorFont.draw("Murakami");
-   popMatrix();
-   //font.draw("Haruki Murakami");
-   */
-
-  // font.draw("Hello World!");
-
 
   // "hair hill" curve
 
@@ -98,26 +88,17 @@ void setup()
   noStroke();
   fill(0, 0, 1);
   beginShape();
-  //vertex(hairs[0][0], hairs[0][1]);
-  //bezierVertex(hairs[0][2], hairs[0][3], hairs[0][4], hairs[0][5], hairs[0][6], hairs[0][7]);
   vertex(width, height);
-  //vertex(0, height);
   endShape();
 
   pushMatrix();
   translate(100, 100);
   stroke(white.hue(), white.saturation(), white.brightness());
   fill(white.hue(), white.saturation(), white.brightness());
-//
-//  strokeWeight(10);
-//  bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height); 
 
   strokeWeight(270);
   stroke(white.hue(), white.saturation(), white.brightness());
   fill(white.hue(), white.saturation(), white.brightness());
-  //           stroke(red.hue(), red.saturation(), red.brightness());
-  //
-  //            fill(red.hue(), red.saturation(), red.brightness());
   bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height); 
   popMatrix();   
 
@@ -125,36 +106,7 @@ void setup()
   for (int i = 0; i < 8; i++) {
     {
       noFill();
-      //      stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
       strokeWeight(3);
-
-
-      //draw matte
-
-      /*
-      noStroke();
-       // stroke(white.hue(), white.saturation(), white.brightness());
-       // fill(white.hue(), white.saturation(), white.brightness());
-       fill(red.hue(), red.saturation(), red.brightness());
-       
-       beginShape();
-       vertex(0, height);
-       
-       bezierVertex((float) width, (float)(height*3/8),(float) width/4, (float)(height*3/8), (float)(width*3/4), (float) (height*6/8));         
-       vertex(0,height);
-       vertex(width, height);
-       
-       endShape();
-       */
-
-      //      strokeWeight(100);
-      //      stroke(white.hue(), white.saturation(), white.brightness());
-      //      fill(white.hue(), white.saturation(), white.brightness());
-      ////           stroke(red.hue(), red.saturation(), red.brightness());
-      ////
-      ////            fill(red.hue(), red.saturation(), red.brightness());
-      //      bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height);         
-
 
       //draw hair
       strokeWeight(3);
@@ -170,10 +122,7 @@ void setup()
 
   bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height); 
 
-
-  //eyes
-  //  noFill();
-  //  stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+  //eyelid
   strokeWeight(8);
 
 
@@ -186,32 +135,21 @@ void setup()
   eyeX4 = width*15/16;
   eyeY4 = height*12/16;
 
-  // curve(eyeX1, eyeY1, eyeX2, eyeY2, eyeX3, eyeY3, eyeX4, eyeY4);
-  //beginShape();
   noFill();
   stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
   strokeWeight(5);
 
-  //line(eyeX1, eyeY1, eyeX4, eyeY4);
   bezier(eyeX1, eyeY1, eyeX2, eyeY2, eyeX3, eyeY3, eyeX4, eyeY4);
-  //  bezier(eyeX1+width*3/16, eyeY1, eyeX2+width*3/16, eyeY2, eyeX3+width*3/16, eyeY3, eyeX4+width*3/16, eyeY4);
 
   //mouth
   line(width*14/16, height*15/16, width, height*15/16);
 
 
-  //  curveVertex(eyeX1, eyeY1);
-  //  curveVertex(eyeX2, eyeY2);
-  //  curveVertex(eyeX4, eyeY4);
-  //  endShape();
-
   strokeWeight(1);
 
-  // create grid object (columns, rows, gutter size, margin size)
-
   // toggle this function to show/hide grid
-  grid.display();
+  //grid.display();
 
-  //    endRecord();
+  endRecord();
 }
 

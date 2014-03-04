@@ -9,29 +9,30 @@ class Tree {
   float treeW; //for generating random width
   float treeH; //for generating random height
 
-//pass treetop coordinates
+  //pass treetop coordinates
   Tree (float _treeX1, float _treeY1) {
     treeX1 = _treeX1;
     treeY1 = _treeY1;
     treeW = random(width/16, width/8);
-    treeH = random(height/8, height/6);
+    treeH = random(height/8, height/5);
   }
 
   void displayTree() {
-// noStroke();
+    // noStroke();
 
-//fill trees with random gray tone
+    //fill trees with random gray tone
     float randomBright = random(.1, .7);
     TColor randomGray = TColor.newHSV(.65, .1, randomBright);
     fill(randomGray.hue(), randomGray.saturation(), randomGray.brightness());
 
-//generate random tree dimensions
+    //generate random tree dimensions
     treeX2 = treeX1 - treeW/2;
     treeX3 = treeX1 + treeW/2;
-    treeY2 = treeY1 + treeH;
-    treeY3 = treeY2;
 
-//draw a tree
+    treeY2 = height;
+    treeY3 = height;
+
+    //draw a tree
     triangle (treeX1, treeY1, treeX2, treeY2, treeX3, treeY3);
   }
 }
