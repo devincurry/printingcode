@@ -30,6 +30,7 @@ void setup()
   colorMode(HSB, 1, 1, 1);
   TColor printBlack = TColor.newHSV(.65, 1, .1);
   TColor white = TColor.newHSV(1, 0, 1);
+  TColor red = TColor.newHSV(1, 1, 1);
 
   size(600, 900);
   background(white.hue(), white.saturation(), white.brightness());
@@ -63,10 +64,12 @@ void setup()
   titleFont.draw("WOOD");
   popMatrix();
 
-  fontSize = 36; //72
-  
+
+  fontSize = 48; //36
+
   RG.init(this);
   RFont authorFont = new RFont("GeosansLight.ttf", fontSize, RFont.LEFT);
+
   //author
   pushMatrix();
   translate(grid.modules[1][2].x, grid.modules[1][7].y);
@@ -78,7 +81,13 @@ void setup()
   authorFont.draw("Murakami");
   popMatrix();
   //font.draw("Haruki Murakami");
-  
+  /*
+  pushMatrix();
+   translate(grid.modules[1][2].x, grid.modules[1][8].y - height/60);
+   authorFont.draw("Murakami");
+   popMatrix();
+   //font.draw("Haruki Murakami");
+   */
 
   // font.draw("Hello World!");
 
@@ -96,33 +105,71 @@ void setup()
   endShape();
 
   pushMatrix();
+  translate(100, 100);
+  stroke(white.hue(), white.saturation(), white.brightness());
+  fill(white.hue(), white.saturation(), white.brightness());
+//
+//  strokeWeight(10);
+//  bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height); 
+
+  strokeWeight(270);
+  stroke(white.hue(), white.saturation(), white.brightness());
+  fill(white.hue(), white.saturation(), white.brightness());
+  //           stroke(red.hue(), red.saturation(), red.brightness());
+  //
+  //            fill(red.hue(), red.saturation(), red.brightness());
+  bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height); 
+  popMatrix();   
+
+  pushMatrix();
   for (int i = 0; i < 8; i++) {
     {
       noFill();
-      stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+      //      stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
       strokeWeight(3);
 
-      /*
+
       //draw matte
-       fill(0.1, 1, 1);
+
+      /*
+      noStroke();
+       // stroke(white.hue(), white.saturation(), white.brightness());
+       // fill(white.hue(), white.saturation(), white.brightness());
+       fill(red.hue(), red.saturation(), red.brightness());
+       
+       beginShape();
        vertex(0, height);
-       bezierVertex(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height); 
-       vertex(width,height);
+       
+       bezierVertex((float) width, (float)(height*3/8),(float) width/4, (float)(height*3/8), (float)(width*3/4), (float) (height*6/8));         
+       vertex(0,height);
+       vertex(width, height);
+       
+       endShape();
        */
 
-      fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
-      stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
-
-      noFill();
+      //      strokeWeight(100);
+      //      stroke(white.hue(), white.saturation(), white.brightness());
+      //      fill(white.hue(), white.saturation(), white.brightness());
+      ////           stroke(red.hue(), red.saturation(), red.brightness());
+      ////
+      ////            fill(red.hue(), red.saturation(), red.brightness());
+      //      bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height);         
 
 
       //draw hair
-      bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height);         
+      strokeWeight(3);
 
+      fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+      stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+      noFill();
+      bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height);         
       translate(random (10, 30), random (10, 30));
     }
   }
   popMatrix();
+
+  bezier(width, (height*3/8), width/4, (height*3/8), (width*3/4), (height*6/8), 0, height); 
+
 
   //eyes
   //  noFill();
@@ -163,7 +210,7 @@ void setup()
   // create grid object (columns, rows, gutter size, margin size)
 
   // toggle this function to show/hide grid
-  //grid.display();
+  grid.display();
 
   //    endRecord();
 }
