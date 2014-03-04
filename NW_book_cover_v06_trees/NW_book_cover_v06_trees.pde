@@ -28,7 +28,8 @@ float treeRangeY;
 
 void setup()
 {
-  //    beginRecord(PDF, "norwegianwood001.pdf"); 
+  //    beginRecord(PDF, "norwegianwood001.pdf");
+ 
 
   colorMode(HSB, 1, 1, 1);
   TColor printBlack = TColor.newHSV(.65, 1, .1);
@@ -38,6 +39,15 @@ void setup()
   background(white.hue(), white.saturation(), white.brightness());
 
   smooth();
+  
+  //generate trees
+  strokeWeight(1);
+  for (int t = 0; t < numTrees; t++) {
+    treeRangeX = random((width/16)*-1, width*11/16);
+    treeRangeY = random(height*5/8, height*15/16);
+    trees[t] = new Tree(treeRangeX, treeRangeY);
+    trees[t].displayTree();
+  }
 
   //draw book title and author text
   norTextX = width/16;
@@ -89,8 +99,18 @@ void setup()
       width-250, -250  // 56, 57
     }
   };
+  
+  // draw white mask
+  noStroke();
+  fill(0, 0, 1);
+  beginShape();
+  vertex(hairs[0][0], hairs[0][1]);
+  bezierVertex(hairs[0][2], hairs[0][3], hairs[0][4], hairs[0][5], hairs[0][6], hairs[0][7]);
+  vertex(width, height);
+  //vertex(0, height);
+  endShape();
 
-  for (int i = 0; i < hairs.length; i++) {
+  for (int i = 0; i < 1; i++) {
     {
       noFill();
       stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
@@ -163,21 +183,11 @@ void setup()
   //  curveVertex(eyeX4, eyeY4);
   //  endShape();
 
-
-  //generate trees
-  strokeWeight(1);
-  for (int t = 0; t < numTrees; t++) {
-    treeRangeX = random((width/16)*-1, width*11/16);
-    treeRangeY = random(height*5/8, height*15/16);
-    trees[t] = new Tree(treeRangeX, treeRangeY);
-    trees[t].displayTree();
-  }
-
   // create grid object (columns, rows, gutter size, margin size)
-  ModularGrid grid = new ModularGrid(16, 16, 0, 0);
 
   // toggle this function to show/hide grid
-  //grid.display();
+  ModularGrid grid = new ModularGrid(16, 16, 0, 0);
+  grid.display();
 
   //    endRecord();
 }
