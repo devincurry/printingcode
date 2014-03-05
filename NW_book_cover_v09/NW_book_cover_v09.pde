@@ -24,14 +24,15 @@ float treeRangeY;
 
 void setup()
 {
-  beginRecord(PDF, "norwegianwood005.pdf"); 
-
+  size(600, 900);
+  beginRecord(PDF, "norwegianwood001.pdf");
   colorMode(HSB, 1, 1, 1);
   TColor printBlack = TColor.newHSV(.65, 1, .1);
   TColor white = TColor.newHSV(1, 0, 1);
   TColor red = TColor.newHSV(1, 1, 1);
 
-  size(600, 900);
+
+
   background(white.hue(), white.saturation(), white.brightness());
 
   smooth();
