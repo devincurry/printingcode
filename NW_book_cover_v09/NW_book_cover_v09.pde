@@ -25,7 +25,7 @@ float treeRangeY;
 void setup()
 {
   size(600, 900);
-  beginRecord(PDF, "norwegianwood001.pdf");
+  beginRecord(PDF, "norwegianwood011.pdf");
   colorMode(HSB, 1, 1, 1);
   TColor printBlack = TColor.newHSV(.65, 1, .1);
   TColor white = TColor.newHSV(1, 0, 1);
@@ -41,7 +41,8 @@ void setup()
   ModularGrid grid = new ModularGrid(16, 16, 0, 0);
 
   //generate trees
-  noStroke();
+//  noStroke();
+  strokeWeight(1);
   for (int t = 0; t < numTrees; t++) {
     treeRangeX = random((width/16)*-1, width*6/16);
     treeRangeY = random(height*6/8, height*15/16);
@@ -49,11 +50,12 @@ void setup()
     trees[t].displayTree();
   }
 
-  strokeWeight(2);
+//  noStroke();
   fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
   fontSize = 60; //72
   RG.init(this);
   RFont titleFont = new RFont("GeosansLight.ttf", fontSize, RFont.LEFT);
+
 
   //title
   pushMatrix();
