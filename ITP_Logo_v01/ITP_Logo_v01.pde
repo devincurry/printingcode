@@ -1,3 +1,4 @@
+import processing.opengl.*;
 import processing.pdf.*;
 //import geomerative.*;
 //import toxi.color.*;
@@ -6,9 +7,9 @@ import processing.pdf.*;
 void setup()
 {
   size(640, 360, P3D);
-  beginRecord(PDF, "ITPlogo01.pdf");
+  beginRaw(PDF, "ITPlogo01.pdf");
 
-  background(0);
+//  background(0);
 
   background(0);
   noStroke();
@@ -23,6 +24,6 @@ void setup()
   rect(0, 50, 200, 30);
   rect(0, 100, 200, 30);
   
-  endRecord();
+  endRaw();
 }
 
