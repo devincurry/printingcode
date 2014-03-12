@@ -8,7 +8,7 @@ float rightAngle = 60;
 float leftAngle = 100;
 
 float floorHeight = 30;
-float spaceHeight = 50;
+float spaceHeight = 45;
 float bldgDepth = 600;
 float bldgWidth = 200;
 float firstFlWidth = 80;
