@@ -41,20 +41,13 @@ void setup()
   fill(dkWall.hue(), dkWall.saturation(), dkWall.brightness());
 
   //right windows
-  /*
-  rect(0, 50, 200, 30);
-   rect(0, 0, 200, 30);
-   rect(0, -50, 200, 30);
-   */
+  rect(0, 50, 600, 25); //1st floor
+  rect(0, 0, 600, 25); //2nd floor
+  rect(0, -50, 600, 25); //3rd floor
+  rect(0, -150, 600, 25); //5th floor
 
-  rect(0, 50, 600, 25);
-  rect(0, 0, 600, 25);
-  rect(0, -50, 600, 25);
-
-  //itp floor
   fill(itpRight.hue(), itpRight.saturation(), itpRight.brightness());
-  //  rect(0, -100, 200, 30);
-  rect(0, -100, 600, 25);
+  rect(0, -100, 600, 25); //4th floor
 
 
   //left wall
@@ -63,18 +56,14 @@ void setup()
 
 
   fill(ltWall.hue(), ltWall.saturation(), ltWall.brightness());
-  rect(0, -50, 200, 25);
-  rect(0, 0, 200, 25);
-  //  rect(0, 50, 200, 35);
-  rect(0, 50, 80, 25);
-  rect(120, 50, 80, 25);
+  rect(0, 50, 80, 25); //1st floor left
+  rect(120, 50, 80, 25); //1st floor right
+  rect(0, 0, 200, 25); //2nd floor
+  rect(0, -50, 200, 25); //3rd floor
+  rect(0, -150, 200, 25); //5th floor
 
-
-
-  //itp floor
   fill(itpLeft.hue(), itpLeft.saturation(), itpLeft.brightness());
-
-  rect(0, -100, 200, 25);
+  rect(0, -100, 200, 25); //4th floor
 
   //door
   //  fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
