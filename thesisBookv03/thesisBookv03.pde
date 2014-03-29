@@ -37,8 +37,9 @@ float nodeHue;
 void setup()
 {
   size(550, 800);
+    beginRecord(PDF, "thesisNodes31.pdf");
+
   colorMode(HSB, 1, 1, 1);
-  beginRecord(PDF, "thesisNodes11.pdf");
 
   TColor printBlack = TColor.newHSV(.65, 1, .1);
   TColor white = TColor.newHSV(1, 0, 1);
@@ -53,7 +54,7 @@ void setup()
 
   strokeWeight(3);
   stroke(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
-  //  fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
+    fill(printBlack.hue(), printBlack.saturation(), printBlack.brightness());
   //randomHue();
 
   node1x = random(width/6, width*5/6);
@@ -106,7 +107,7 @@ void setup()
   //  node1y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(green.hue(), green.saturation(), green.brightness());
+//  fill(green.hue(), green.saturation(), green.brightness());
 
   ellipse(node1x, node1y, nodeW, nodeH);
 
@@ -115,7 +116,7 @@ void setup()
   //  node2y = random(height/8, height*6/8);
   nodeW = random(10, 40);
   nodeH = nodeW;
-  fill(gold.hue(), gold.saturation(), gold.brightness());
+//  fill(gold.hue(), gold.saturation(), gold.brightness());
   ellipse(node2x, node2y, nodeW, nodeH);
 
   //node3
@@ -123,7 +124,7 @@ void setup()
   //  node3y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(blue.hue(), blue.saturation(), blue.brightness());
+//  fill(blue.hue(), blue.saturation(), blue.brightness());
   ellipse(node3x, node3y, nodeW, nodeH);
 
   //node4
@@ -131,7 +132,7 @@ void setup()
   //  node4y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(green.hue(), green.saturation(), green.brightness());
+//  fill(green.hue(), green.saturation(), green.brightness());
 
   ellipse(node4x, node4y, nodeW, nodeH);
 
@@ -140,7 +141,7 @@ void setup()
   //  node5y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(gold.hue(), gold.saturation(), gold.brightness());
+//  fill(gold.hue(), gold.saturation(), gold.brightness());
 
   ellipse(node5x, node5y, nodeW, nodeH);
 
@@ -149,7 +150,7 @@ void setup()
   //  node6y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(blue.hue(), blue.saturation(), blue.brightness());
+//  fill(blue.hue(), blue.saturation(), blue.brightness());
 
   ellipse(node6x, node6y, nodeW, nodeH);
 
@@ -158,7 +159,7 @@ void setup()
   //  node7y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(green.hue(), green.saturation(), green.brightness());
+//  fill(green.hue(), green.saturation(), green.brightness());
 
   ellipse(node7x, node7y, nodeW, nodeH);
 
@@ -167,7 +168,7 @@ void setup()
   //  node8y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(green.hue(), green.saturation(), green.brightness());
+//  fill(green.hue(), green.saturation(), green.brightness());
 
   ellipse(node8x, node8y, nodeW, nodeH);
 
@@ -176,7 +177,7 @@ void setup()
   //  node9y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(blue.hue(), blue.saturation(), blue.brightness());
+//  fill(blue.hue(), blue.saturation(), blue.brightness());
 
   ellipse(node9x, node9y, nodeW, nodeH);
 
@@ -185,7 +186,7 @@ void setup()
   //  node10y = random(height/8, height*6/8);
   nodeW = random(nodeSizeLow, nodeSizeHi);
   nodeH = nodeW;
-  fill(blue.hue(), blue.saturation(), blue.brightness());
+//  fill(blue.hue(), blue.saturation(), blue.brightness());
 
   ellipse(node10x, node10y, nodeW, nodeH);
 
