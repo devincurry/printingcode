@@ -20,38 +20,98 @@ void setup()
   size(250, 250);
   colorMode(HSB, 1, 1, 1);
 
-  //beginRecord(PDF, "tanakaGreen01.pdf"); 
+  //beginRecord(PDF, "tanakamyHue01.pdf"); 
 
 
 
   //color palette
   TColor black = TColor.newHSV(.65, 1, .1);
   TColor white = TColor.newHSV(.65, 0, 1);
-  TColor red = TColor.newHSV(1, .85, 1);
-  TColor blue = TColor.newHSV(.6, .75, .56);
-  TColor green = TColor.newHSV(.42, .72, .6);
+  //  TColor myHue = TColor.newHSV(1, .85, 1); //red
+  //  TColor myHue = TColor.newHSV(.6, .75, .56); //blue
+  TColor myHue = TColor.newHSV(.42, .72, .6); //green
 
   smooth();
   noStroke();
   background(white.hue(), white.saturation(), white.brightness());
-  // background(green.hue(), green.saturation(), green.brightness());
-  //  background(blue.hue(), blue.saturation(), blue.brightness());
-  //fill(red.hue(), red.saturation(), red.brightness());
+  // background(myHue.hue(), myHue.saturation(), myHue.brightness());
 
   RG.init(this);
 
 
+  randOrder = random(0, 6);
 
-  fill(black.hue(), black.saturation(), black.brightness());
-  drawBlack();
+  //black, hue, white
+  if (randOrder <= 1) {
+    fill(black.hue(), black.saturation(), black.brightness());
+    drawBlack();
 
-  //  fill(red.hue(), red.saturation(), red.brightness());
-  //  fill(blue.hue(), blue.saturation(), blue.brightness());
-  fill(green.hue(), green.saturation(), green.brightness());
-  drawHue();
+    fill(myHue.hue(), myHue.saturation(), myHue.brightness());
+    drawHue();
 
-  fill(white.hue(), white.saturation(), white.brightness());
-  drawWhite();
+    fill(white.hue(), white.saturation(), white.brightness());
+    drawWhite();
+  }
+
+  //hue, black, white
+  if (randOrder > 1 && randOrder <= 2) {
+    fill(myHue.hue(), myHue.saturation(), myHue.brightness());
+    drawHue();
+
+    fill(black.hue(), black.saturation(), black.brightness());
+    drawBlack();
+
+    fill(white.hue(), white.saturation(), white.brightness());
+    drawWhite();
+  }
+
+  //white, hue, black
+  if (randOrder > 2 && randOrder <= 3) {
+    fill(white.hue(), white.saturation(), white.brightness());
+    drawWhite();
+
+    fill(myHue.hue(), myHue.saturation(), myHue.brightness());
+    drawHue();
+
+    fill(black.hue(), black.saturation(), black.brightness());
+    drawBlack();
+  }
+
+  //white, black, hue
+  if (randOrder > 3 && randOrder <= 4) {
+    fill(white.hue(), white.saturation(), white.brightness());
+    drawWhite();
+
+    fill(black.hue(), black.saturation(), black.brightness());
+    drawBlack();
+
+    fill(myHue.hue(), myHue.saturation(), myHue.brightness());
+    drawHue();
+  }
+
+  //black, white, hue
+  if (randOrder > 4 && randOrder <= 5) {
+    fill(black.hue(), black.saturation(), black.brightness());
+    drawBlack();
+
+    fill(white.hue(), white.saturation(), white.brightness());
+    drawWhite();
+
+    fill(myHue.hue(), myHue.saturation(), myHue.brightness());
+    drawHue();
+  }
+
+  //hue, white, black
+  if (randOrder > 5 && randOrder <= 6) {
+    fill(myHue.hue(), myHue.saturation(), myHue.brightness());
+    drawHue();
+
+    fill(white.hue(), white.saturation(), white.brightness());
+    drawWhite();
+
+    fill(black.hue(), black.saturation(), black.brightness());
+    drawBlack();
+  }
 
   //endRecord();
 }
@@ -152,7 +212,7 @@ void drawHue() {
     hueRow4.draw();
     hueCol2.draw();
   }
-  //  fill(green.hue(), green.saturation(), green.brightness());
+  //  fill(myHue.hue(), myHue.saturation(), myHue.brightness());
   //  hueRow2.draw();
 }
 
