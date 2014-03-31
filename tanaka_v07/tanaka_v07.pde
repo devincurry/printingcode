@@ -65,7 +65,12 @@ void setup()
 */
 
   WeightedRandomSet<Integer> blackShape = new WeightedRandomSet<Integer>();
-  blackShape.add(0, 0, rowW, rowH), .1);
+  //blackShape.add((int) 0, (int) 0, (int) 250, (int) 50), 5);
+  //blackShape.add((int) 0, (int) 50, (int) 250, (int) 50), 5);
+  blackShape.add(shape(0, 0, 250, 50), 5);
+  blackShape.add(shape( 0, 50, 250, 50), 5);
+  //   ran.add(color(black.hue(), black.saturation(), black.brightness()), 18);
+
   
   /*
   blackShape.add(blackRow1.draw()), .1);
@@ -109,7 +114,8 @@ void setup()
   fill(black.hue(), black.saturation(), black.brightness());
 //  blackCol1.draw();
 //  blackCol4.draw();
-blackShape.getRandom.draw();
+//blackShape.getRandom.draw();
+  blackShape.getRandom();
 
   fill(green.hue(), green.saturation(), green.brightness());
   hueRow2.draw();
