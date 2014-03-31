@@ -8,6 +8,7 @@ float squareH = 50;
 float randBlack;
 float randHue;
 float randWhite;
+float randOrder;
 int rowW = 250;
 int rowH = 50;
 int colW = 50;
@@ -39,63 +40,8 @@ void setup()
 
   RG.init(this);
 
-  //  int rowW = 250;
-  //  int rowH = 50;
-  //  int colW = 50;
-  //  int colH = 250;
-
-  /*
-  WeightedRandomSet<Integer> ran = new WeightedRandomSet<Integer>();
-   
-   ran.add(color(black.hue(), black.saturation(), black.brightness()), 18);
-   //  ran.add(color(red.hue(), red.saturation(), red.brightness()), 12);
-   //  ran.add(color(blue.hue(), blue.saturation(), blue.brightness()), 12);
-   ran.add(color(green.hue(), green.saturation(), green.brightness()), 12);
-   
-   ran.add(color(white.hue(), white.saturation(), white.brightness()), 8);
-   */
-
-  //  fill(ran.getRandom());
-  //  rect(0, 0, shapeSize, shapeSize);
 
 
-  /*
-  RShape blackRow0 = RShape.createRectangle(0, 0, rowW, rowH);
-   RShape blackRow1 = RShape.createRectangle(0, 50, rowW, rowH);
-   RShape blackRow2 = RShape.createRectangle(0, 100, rowW, rowH);
-   RShape blackRow3 = RShape.createRectangle(0, 150, rowW, rowH);
-   RShape blackRow4 = RShape.createRectangle(0, 200, rowW, rowH);
-   RShape blackCol0 = RShape.createRectangle(0, 0, colW, colH);
-   RShape blackCol1 = RShape.createRectangle(50, 0, colW, colH);
-   RShape blackCol2 = RShape.createRectangle(100, 0, colW, colH);
-   RShape blackCol3 = RShape.createRectangle(150, 0, colW, colH);
-   RShape blackCol4 = RShape.createRectangle(200, 0, colW, colH);
-   
-   
-   RShape hueRow0 = RShape.createRectangle(0, 0, rowW, rowH);
-   RShape hueRow2 = RShape.createRectangle(0, 100, rowW, rowH);
-   RShape hueRow4 = RShape.createRectangle(0, 200, rowW, rowH);
-   RShape hueCol0 = RShape.createRectangle(0, 0, colW, colH);
-   RShape hueCol2 = RShape.createRectangle(100, 0, colW, colH);
-   RShape hueCol4 = RShape.createRectangle(200, 0, colW, colH);
-   
-   RShape whiteSquare00 = RShape.createRectangle(0, 0, colW, rowH);
-   RShape whiteSquare01 = RShape.createRectangle(0, 50, colW, rowH);
-   RShape whiteSquare03 = RShape.createRectangle(0, 150, colW, rowH);
-   RShape whiteSquare04 = RShape.createRectangle(0, 200, colW, rowH);
-   RShape whiteSquare10 = RShape.createRectangle(50, 0, colW, rowH);
-   RShape whiteSquare11 = RShape.createRectangle(50, 50, colW, rowH);
-   RShape whiteSquare13 = RShape.createRectangle(50, 150, colW, rowH);
-   RShape whiteSquare14 = RShape.createRectangle(50, 200, colW, rowH);
-   RShape whiteSquare30 = RShape.createRectangle(150, 0, colW, rowH);
-   RShape whiteSquare31 = RShape.createRectangle(150, 50, colW, rowH);
-   RShape whiteSquare33 = RShape.createRectangle(150, 150, colW, rowH);
-   RShape whiteSquare34 = RShape.createRectangle(150, 200, colW, rowH);
-   RShape whiteSquare40 = RShape.createRectangle(200, 0, colW, rowH);
-   RShape whiteSquare41 = RShape.createRectangle(200, 50, colW, rowH);
-   RShape whiteSquare43 = RShape.createRectangle(200, 150, colW, rowH);
-   RShape whiteSquare44 = RShape.createRectangle(200, 200, colW, rowH);
-   */
   fill(black.hue(), black.saturation(), black.brightness());
   drawBlack();
 
@@ -106,7 +52,7 @@ void setup()
 
   fill(white.hue(), white.saturation(), white.brightness());
   drawWhite();
-  
+
   //endRecord();
 }
 
@@ -208,23 +154,81 @@ void drawHue() {
   }
   //  fill(green.hue(), green.saturation(), green.brightness());
   //  hueRow2.draw();
+}
 
-  void drawWhite() {
-    RShape whiteSquare00 = RShape.createRectangle(0, 0, colW, rowH);
-    RShape whiteSquare01 = RShape.createRectangle(0, 50, colW, rowH);
-    RShape whiteSquare03 = RShape.createRectangle(0, 150, colW, rowH);
-    RShape whiteSquare04 = RShape.createRectangle(0, 200, colW, rowH);
-    RShape whiteSquare10 = RShape.createRectangle(50, 0, colW, rowH);
-    RShape whiteSquare11 = RShape.createRectangle(50, 50, colW, rowH);
-    RShape whiteSquare13 = RShape.createRectangle(50, 150, colW, rowH);
-    RShape whiteSquare14 = RShape.createRectangle(50, 200, colW, rowH);
-    RShape whiteSquare30 = RShape.createRectangle(150, 0, colW, rowH);
-    RShape whiteSquare31 = RShape.createRectangle(150, 50, colW, rowH);
-    RShape whiteSquare33 = RShape.createRectangle(150, 150, colW, rowH);
-    RShape whiteSquare34 = RShape.createRectangle(150, 200, colW, rowH);
-    RShape whiteSquare40 = RShape.createRectangle(200, 0, colW, rowH);
-    RShape whiteSquare41 = RShape.createRectangle(200, 50, colW, rowH);
-    RShape whiteSquare43 = RShape.createRectangle(200, 150, colW, rowH);
-    RShape whiteSquare44 = RShape.createRectangle(200, 200, colW, rowH);
+void drawWhite() {
+  RShape whiteSquare00 = RShape.createRectangle(0, 0, colW, rowH);
+  RShape whiteSquare01 = RShape.createRectangle(0, 50, colW, rowH);
+  RShape whiteSquare03 = RShape.createRectangle(0, 150, colW, rowH);
+  RShape whiteSquare04 = RShape.createRectangle(0, 200, colW, rowH);
+  RShape whiteSquare10 = RShape.createRectangle(50, 0, colW, rowH);
+  RShape whiteSquare11 = RShape.createRectangle(50, 50, colW, rowH);
+  RShape whiteSquare13 = RShape.createRectangle(50, 150, colW, rowH);
+  RShape whiteSquare14 = RShape.createRectangle(50, 200, colW, rowH);
+  RShape whiteSquare30 = RShape.createRectangle(150, 0, colW, rowH);
+  RShape whiteSquare31 = RShape.createRectangle(150, 50, colW, rowH);
+  RShape whiteSquare33 = RShape.createRectangle(150, 150, colW, rowH);
+  RShape whiteSquare34 = RShape.createRectangle(150, 200, colW, rowH);
+  RShape whiteSquare40 = RShape.createRectangle(200, 0, colW, rowH);
+  RShape whiteSquare41 = RShape.createRectangle(200, 50, colW, rowH);
+  RShape whiteSquare43 = RShape.createRectangle(200, 150, colW, rowH);
+  RShape whiteSquare44 = RShape.createRectangle(200, 200, colW, rowH);
+
+  randWhite = random(0, 12);
+
+  if (randWhite < 3) {
   }
+  if (randWhite >= 3 && randWhite < 4) {
+    whiteSquare00.draw();
+    whiteSquare10.draw();
+    whiteSquare40.draw();
+    whiteSquare44.draw();
+  }
+  if (randWhite >=4 && randWhite < 6) {
+    whiteSquare10.draw();
+    whiteSquare30.draw();
+    whiteSquare01.draw();
+    whiteSquare11.draw();
+    whiteSquare31.draw();
+    whiteSquare41.draw();
+    whiteSquare03.draw();
+    whiteSquare13.draw();
+    whiteSquare33.draw();
+    whiteSquare14.draw();
+  }
+  if (randWhite >= 6 && randWhite < 7) {
+    whiteSquare00.draw();
+    whiteSquare01.draw();
+    whiteSquare04.draw();
+    whiteSquare14.draw();
+    whiteSquare44.draw();
+  }
+  if (randWhite >= 7 && randWhite < 10) {
+    whiteSquare10.draw();
+    whiteSquare30.draw();
+    whiteSquare11.draw();
+    whiteSquare31.draw();
+    whiteSquare13.draw();
+    whiteSquare33.draw();
+    whiteSquare14.draw();
+  }
+  if (randWhite >= 10 && randWhite < 11) {
+    whiteSquare01.draw();
+    whiteSquare11.draw();
+    whiteSquare31.draw();
+    whiteSquare41.draw();
+    whiteSquare03.draw();
+    whiteSquare13.draw();
+    whiteSquare33.draw();
+  }
+  if (randWhite >= 11 && randWhite <= 12) {
+    whiteSquare00.draw();
+    whiteSquare40.draw();
+    whiteSquare01.draw();
+    whiteSquare41.draw();
+    whiteSquare03.draw();
+    whiteSquare04.draw();
+    whiteSquare44.draw();
+  }
+}
 
