@@ -16,12 +16,43 @@ int colH = 250;
 
 boolean drawIt = true;
 
+//RShape[][] blackShapes;
+//RShape[][] hueShapes;
+RShape[][] whiteSquares;
 
 void setup()
 {
   size(250, 250);
   colorMode(HSB, 1, 1, 1);
   smooth();
+  
+  //createBlackShapes();
+  createWhiteShapes();
+}
+
+/*
+void createBlackShapes();
+{
+  blackShapes = new RShape[5][5];
+  
+  for(int bX = 0; bX < 5; bX++)
+  {
+    for(int bY = 0; bY < 5; bY++)
+    {
+      blackShapes[bX][bY] = RShape.createRectangle(bX * 50, bY * 50, colW, ro
+      */
+      
+void createWhiteShapes()
+{
+  whiteSquares = new RShape[5][5];
+  
+  for(int x = 0; x < 5; x++)
+  {
+    for(int y = 0; y < 5; y++)
+    {
+      whiteSquares[x][y] = RShape.createRectangle(x * 50, y * 50, colW, rowH);
+    }
+  }
 }
 
 void draw()
@@ -226,78 +257,62 @@ void drawHue() {
 }
 
 void drawWhite() {
-  RShape whiteSquare00 = RShape.createRectangle(0, 0, colW, rowH);
-  RShape whiteSquare01 = RShape.createRectangle(0, 50, colW, rowH);
-  RShape whiteSquare03 = RShape.createRectangle(0, 150, colW, rowH);
-  RShape whiteSquare04 = RShape.createRectangle(0, 200, colW, rowH);
-  RShape whiteSquare10 = RShape.createRectangle(50, 0, colW, rowH);
-  RShape whiteSquare11 = RShape.createRectangle(50, 50, colW, rowH);
-  RShape whiteSquare13 = RShape.createRectangle(50, 150, colW, rowH);
-  RShape whiteSquare14 = RShape.createRectangle(50, 200, colW, rowH);
-  RShape whiteSquare30 = RShape.createRectangle(150, 0, colW, rowH);
-  RShape whiteSquare31 = RShape.createRectangle(150, 50, colW, rowH);
-  RShape whiteSquare33 = RShape.createRectangle(150, 150, colW, rowH);
-  RShape whiteSquare34 = RShape.createRectangle(150, 200, colW, rowH);
-  RShape whiteSquare40 = RShape.createRectangle(200, 0, colW, rowH);
-  RShape whiteSquare41 = RShape.createRectangle(200, 50, colW, rowH);
-  RShape whiteSquare43 = RShape.createRectangle(200, 150, colW, rowH);
-  RShape whiteSquare44 = RShape.createRectangle(200, 200, colW, rowH);
-
+  
   randWhite = random(0, 12);
 
   if (randWhite < 3) {
   }
   if (randWhite >= 3 && randWhite < 4) {
-    whiteSquare00.draw();
-    whiteSquare10.draw();
-    whiteSquare40.draw();
-    whiteSquare44.draw();
+    whiteSquares[0][0].draw();
+    whiteSquares[1][0].draw();
+    whiteSquares[4][0].draw();
+    whiteSquares[4][4].draw();
   }
   if (randWhite >=4 && randWhite < 6) {
-    whiteSquare10.draw();
-    whiteSquare30.draw();
-    whiteSquare01.draw();
-    whiteSquare11.draw();
-    whiteSquare31.draw();
-    whiteSquare41.draw();
-    whiteSquare03.draw();
-    whiteSquare13.draw();
-    whiteSquare33.draw();
-    whiteSquare14.draw();
+    whiteSquares[1][0].draw();
+    whiteSquares[3][0].draw();
+    whiteSquares[0][1].draw();
+    whiteSquares[1][1].draw();
+    whiteSquares[3][1].draw();
+    whiteSquares[4][1].draw();
+    whiteSquares[0][3].draw();
+    whiteSquares[1][3].draw();
+    whiteSquares[3][3].draw();
+    whiteSquares[1][4].draw();
   }
   if (randWhite >= 6 && randWhite < 7) {
-    whiteSquare00.draw();
-    whiteSquare01.draw();
-    whiteSquare04.draw();
-    whiteSquare14.draw();
-    whiteSquare44.draw();
+    whiteSquares[0][0].draw();
+    whiteSquares[0][1].draw();
+    whiteSquares[0][4].draw();
+    whiteSquares[1][4].draw();
+    whiteSquares[4][4].draw();
   }
   if (randWhite >= 7 && randWhite < 10) {
-    whiteSquare10.draw();
-    whiteSquare30.draw();
-    whiteSquare11.draw();
-    whiteSquare31.draw();
-    whiteSquare13.draw();
-    whiteSquare33.draw();
-    whiteSquare14.draw();
+    whiteSquares[1][0].draw();
+    whiteSquares[3][0].draw();
+    whiteSquares[1][1].draw();
+    whiteSquares[3][1].draw();
+    whiteSquares[1][3].draw();
+    whiteSquares[3][3].draw();
+    whiteSquares[1][4].draw();
   }
   if (randWhite >= 10 && randWhite < 11) {
-    whiteSquare01.draw();
-    whiteSquare11.draw();
-    whiteSquare31.draw();
-    whiteSquare41.draw();
-    whiteSquare03.draw();
-    whiteSquare13.draw();
-    whiteSquare33.draw();
+    whiteSquares[0][1].draw();
+    whiteSquares[1][1].draw();
+    whiteSquares[3][1].draw();
+    whiteSquares[4][1].draw();
+    whiteSquares[0][3].draw();
+    whiteSquares[1][3].draw();
+    whiteSquares[3][3].draw();
   }
   if (randWhite >= 11 && randWhite <= 12) {
-    whiteSquare00.draw();
-    whiteSquare40.draw();
-    whiteSquare01.draw();
-    whiteSquare41.draw();
-    whiteSquare03.draw();
-    whiteSquare04.draw();
-    whiteSquare44.draw();
+    whiteSquares[0][0].draw();
+    whiteSquares[4][0].draw();
+    whiteSquares[0][1].draw();
+    whiteSquares[4][1].draw();
+    whiteSquares[0][3].draw();
+    whiteSquares[0][4].draw();
+    whiteSquares[4][4].draw();
   }
 }
 
