@@ -157,11 +157,15 @@ void draw()
 }
 
 void drawBlack() {
-  RShape blackRow0 = RShape.createRectangle(0, 0, rowW, rowH);
-  RShape blackRow1 = RShape.createRectangle(0, 50, rowW, rowH);
-  RShape blackRow2 = RShape.createRectangle(0, 100, rowW, rowH);
-  RShape blackRow3 = RShape.createRectangle(0, 150, rowW, rowH);
-  RShape blackRow4 = RShape.createRectangle(0, 200, rowW, rowH);
+  
+  RShape[] rows = new RShape[4];
+  
+  for(int y = 0; y < 4; y++)
+  {
+    rows[y] = RShape.createRectangle(0, y * 50, rowW, rowH);
+  }
+  
+  
   RShape blackCol0 = RShape.createRectangle(0, 0, colW, colH);
   RShape blackCol1 = RShape.createRectangle(50, 0, colW, colH);
   RShape blackCol2 = RShape.createRectangle(100, 0, colW, colH);
