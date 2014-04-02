@@ -39,7 +39,7 @@ float nodeHue;
 void setup()
 {
   size(550, 800);
-  beginRecord(PDF, "nodesSameSizeStroke31.pdf");
+  beginRecord(PDF, "nodesSameSize31.pdf");
 
   colorMode(HSB, 1, 1, 1);
 
