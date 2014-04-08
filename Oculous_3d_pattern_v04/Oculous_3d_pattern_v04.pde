@@ -32,7 +32,7 @@ void setup()
   //  size(1000, 720, P3D);
   size(1000, 1000, P3D);
   colorMode(RGB);
-  beginRaw(PDF, "OculusPattern04.pdf");
+  beginRaw(PDF, "OculusPattern01.pdf");
   smooth();
   drawThing();
   endRaw();
@@ -51,12 +51,12 @@ void drawThing() {
   //popMatrix(); 
 
   //shape
-  strokeWeight(2);
+  strokeWeight(2.5);
   stroke(30);
   //stroke(255);
-  for (int i = 0; i < 10; i++)
+  for (int i = 0; i < 4; i++)
   {
-    for (int j = 0; j < 100; j++)
+    for (int j = 0; j < 4; j++)
     {
 
       pushMatrix();
