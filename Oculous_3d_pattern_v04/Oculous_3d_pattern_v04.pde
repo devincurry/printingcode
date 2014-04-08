@@ -21,6 +21,11 @@ float floorSat = .5;
 
 float boxSize = 100;
 
+float randR;
+float randG;
+float randB;
+float alphaAmount = 50;
+
 
 void setup()
 {
@@ -53,6 +58,7 @@ void drawThing() {
   {
     for (int j = 0; j < 100; j++)
     {
+
       pushMatrix();
       //rotateX(-.55);
       //rotateY(-.2);
@@ -60,7 +66,11 @@ void drawThing() {
       translate(200 + (i * 300), 200 + (j * 300), 0);
       //rotateY(0.5);
       //  fill(255, 0, 0, 50);
-      noFill();
+      // noFill();
+      randR = random(0, 255);
+      randG = random(0, 255);
+      randB = random(0, 255);
+      fill(randR, randG, randB, alphaAmount);
       box(boxSize);
 
       float boxPos = random (0, 2);
