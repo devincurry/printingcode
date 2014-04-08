@@ -27,7 +27,7 @@ void setup()
   //  size(1000, 720, P3D);
   size(1000, 1000, P3D);
   colorMode(RGB);
-  beginRaw(PDF, "OculusPattern01.pdf");
+  beginRaw(PDF, "OculusPattern04.pdf");
   smooth();
   drawThing();
   endRaw();
@@ -36,6 +36,7 @@ void setup()
 void drawThing() {
 
   background(255);
+  //background(30);
 
   //fake background
   //pushMatrix();
@@ -46,8 +47,8 @@ void drawThing() {
 
   //shape
   strokeWeight(2);
-  stroke(0);
-
+  stroke(30);
+  //stroke(255);
   for (int i = 0; i < 10; i++)
   {
     for (int j = 0; j < 100; j++)
@@ -61,7 +62,16 @@ void drawThing() {
       //  fill(255, 0, 0, 50);
       noFill();
       box(boxSize);
-      translate(0, 0, boxSize);
+
+      float boxPos = random (0, 2);
+      if (boxPos <= 1) {
+        translate(0, 0, boxSize);
+      } 
+      else
+      {
+        translate(boxSize, 0, 0);
+      }
+
       box(boxSize);
       //  box(300,100,100);
       popMatrix();
