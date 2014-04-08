@@ -1,6 +1,6 @@
 import processing.opengl.*;
 import processing.pdf.*;
-//import geomerative.*;
+import geomerative.*;
 
 float rightAngle = 50;
 float leftAngle = 100;
@@ -28,19 +28,21 @@ float boxSize = 100;
 
 void setup()
 {
+    beginRaw(PDF, "OculousPattern01.pdf");
+
   //  size(1000, 720, P3D);
-  size(1000, 1000, P3D);
+  size(1200, 1000, P3D);
 
-  beginRaw(PDF, "OculousPattern01.pdf");
   smooth();
-  drawThing();
-  endRaw();
-}
 
-void drawThing() {
+
 
   //background(255);
   background(0);
+    beginRaw(PDF, "OculousPattern01.pdf");
+
+  fill(0);
+  rect(0,0,1200,1000);
 
   //fake background
   //pushMatrix();
@@ -66,16 +68,21 @@ void drawThing() {
       //rotateX(-.55);
       //rotateY(-.2);
       //      translate(200 + (i * 300), 100, 0);
-      translate(200 + (i * 300), 200 + (j * 300), 0);
+//      translate(200 + (i * 300), 200 + (j * 300), 0);
+      translate(190 + (i * 300), 200 + (j * 300), 200);
+
       //rotateY(0.5);
       fill(randR, randG, randB, 70);
       //noFill();
       box(boxSize);
-      translate(0, 0, boxSize);
+//      translate(0, 0, boxSize);
+      translate(boxSize, 0, 0);
+
       box(boxSize);
       //  box(300,100,100);
       popMatrix();
     }
   }
+    endRaw();
 }
 

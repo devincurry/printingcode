@@ -69,12 +69,21 @@ void setup () {
   outsideY = ceilingY3;
   outsideW = 80;
   outsideH = 150;
-  strokeWeight(3);
-  rect(outsideX, outsideY, outsideW, outsideH);
-  
+
+/*
   //middle
   strokeWeight(1);
-  fill(1,0,.6);
-
+  fill(1, 0, .6);
+  middleX = (insideW + outsideW)/3;
+  middleY = outsideY + (outsideH/4);
+  middleW = insideW/2;
+  middleH = outsideH/1.5;
+  pushMatrix();
+  translate(-5, -12);
+  rect(middleX, middleY, middleW, middleH);
+  popMatrix();
+  */
+    strokeWeight(3);
+  rect(outsideX, outsideY, outsideW, outsideH);
 }
 
