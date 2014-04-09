@@ -22,10 +22,10 @@ void setup()
 {
   size(1000, 1000, P3D);
   colorMode(HSB, 1, 1, 1, 1);
-  beginRaw(PDF, "OculusPattern04.pdf");
+  beginRaw(PDF, "OculusPatternBlack14.pdf");
   smooth();
-  //fill(1, 0, 0, 1); //black background
-  fill(1, 0, 1, 1); //white background
+  fill(.65, 1, .1, 1); //black background
+  //fill(1, 0, 1, 1); //white background
   rect(0, 0, 1000, 1000);
   drawThing();
   endRaw();
@@ -34,13 +34,13 @@ void setup()
 void drawThing() {
 
 
-  //  background(1, 0, 0, 1); //black
-  background(1, 0, 1, 1); //white
+    background(1, 0, 0, 1); //black
+  //background(1, 0, 1, 1); //white
 
   //shape
   strokeWeight(2);
-  //stroke(1, 0, 1, 1); //white
-  stroke(1, 0, 0, 1); //black
+  stroke(1, 0, 1, 1); //white
+  //stroke(1, 0, 0, 1); //black
   for (int i = 0; i < 4; i++)
   {
     for (int j = 0; j < 4; j++)
