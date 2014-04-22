@@ -100,6 +100,7 @@ void draw() {
 
   stroke(black.hue(), black.saturation(), black.brightness());
   //outline();
+  
   if (savePDF) {
     endRecord();
     println("Saved PDF");

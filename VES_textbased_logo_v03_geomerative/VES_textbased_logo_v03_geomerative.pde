@@ -44,6 +44,22 @@ RShape eLine41;
 RShape eLine42;
 RShape eLine43;
 
+RShape sLine11;
+RShape sLine12;
+RShape sLine13;
+
+RShape sLine21;
+RShape sLine22;
+RShape sLine23;
+
+RShape sLine31;
+RShape sLine32;
+RShape sLine33;
+
+RShape sLine41;
+RShape sLine42;
+RShape sLine43;
+
 
 void setup() {
 
@@ -96,6 +112,28 @@ void setup() {
   eLine41 = RShape.createLine(0, 0, w, hThird);
   eLine42 = RShape.createLine(0, 0, w*2, 0);
   eLine43 = RShape.createLine(w, hThird, w*2, 0);
+  
+  
+   //S
+//  triangle(0, 0, w, 0, w, hThird); //top-right  sLine11 = RShape.createLine(0, 0, 0, h);
+  sLine12 = RShape.createLine(0, 0, wHalf, h);
+  sLine13 = RShape.createLine(0, h, wHalf, h);
+
+  //  triangle(0, hHalf, 0, h, wHalf, hHalf); //crosspiece
+  sLine21 = RShape.createLine(0, hHalf, 0, h);
+  sLine22 = RShape.createLine(0, hHalf, wHalf, hHalf);
+  sLine23 = RShape.createLine(0, h, wHalf, hHalf);
+
+  //  triangle(0, h, w, hThird*2, w+wThird, h); //bottom-right
+  sLine31 = RShape.createLine(0, h, w, hThird*2);
+  sLine32 = RShape.createLine(0, h, w+wThird, h);
+  sLine33 = RShape.createLine(w, hThird*2, w+wThird, h);
+
+  //  triangle(0, 0, w, hThird, w*2, 0); //top-right
+  sLine41 = RShape.createLine(0, 0, w, hThird);
+  sLine42 = RShape.createLine(0, 0, w*2, 0);
+  sLine43 = RShape.createLine(w, hThird, w*2, 0);
+
 
   smooth();
   background(white.hue(), white.saturation(), white.brightness());
@@ -163,7 +201,7 @@ void setup() {
   translate(w*2, 0);
 
   fill(hueVal, 1, .75, alphaVal);
-  triangle(0, 0, w, 0, w, hThird); //top-right
+//  triangle(0, 0, w, 0, w, hThird); //top-right
 
   fill(.4, 1, .5, alphaVal);
   triangle(0, 0, 0, hThird, w, hThird*2); //mid-top
